@@ -1,0 +1,46 @@
+1. Project Setup
+ Create a new project folder.
+
+ Set up a Python virtual environment.
+
+ Initialize Git (optional but recommended).
+
+2. Backend Development (Python + Flask)
+ Create a Flask backend.
+
+ Create an endpoint to upload .txt files.
+
+ Write a scraper function using requests + BeautifulSoup to process each link and search for keywords.
+
+ Save relevant links into an output .txt file.
+
+ Return the downloadable .txt file as a response.
+
+3. Frontend Development (HTML + Bootstrap or Tailwind for simplicity)
+ Create a single-page interface:
+
+Upload .txt file
+
+Input keywords (optional)
+
+Button to submit
+
+Download link for results
+
+4. Connecting Frontend + Backend
+ Use JavaScript or Flask's built-in templating (Jinja2) to handle form submissions.
+
+ Display or trigger download of the returned .txt file.
+
+5. Hosting
+ Choose a host:
+
+Render (free, easy for Flask)
+
+Railway
+
+Heroku (limited free tier now)
+
+ Add requirements.txt, Procfile, and environment config for deployment.
+
+ Deploy app.

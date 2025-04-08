@@ -1,0 +1,19 @@
+Name: Python Web Scraper
+
+Overview:
+I want to create a hosted web app that can take in a txt file containing just html addresses and then 
+scrape each one looking for key words.
+I then want it to return to me a txt document that has all of the relevant html links.
+I want it to have a frontend that is easy to work with and very simple
+This needs to be hosted on the web so that it can be accessed from anywhere.
+
+Features:
+- A function that will take in a series of web links and output the ones that have the relevant data
+
+
+
+- A front end webpage that will allow user interaction with the function
+
+
+
+- It must output a txt file that has all of the relevant html links after scraping.
