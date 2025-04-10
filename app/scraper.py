@@ -4,6 +4,7 @@ import os
 import socket
 from urllib.parse import urlparse
 import re
+from requests.exceptions import Timeout, RequestException
 
 def clean_url(url):
     # Remove BOM or non-ASCII characters and strip whitespace
@@ -44,6 +45,14 @@ def scrape_links(filepath, keywords):
 
                 if any(keyword.lower() in text for keyword in keywords):
                     relevant_links.append(url)
+
+            except Timeout:
+                print(f"Timeout occurred for {url}. Skipping this URL.")
+                continue  # Skip this URL if it timed out
+
+            except RequestException as e:
+                print(f"Error scraping {url}: {e}")
+                continue  # Handle other request exceptions (like network errors, etc.)
 
             except Exception as e:
                 print(f"Error scraping {url}: {e}")
