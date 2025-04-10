@@ -3,6 +3,14 @@ from bs4 import BeautifulSoup
 import os
 import socket
 from urllib.parse import urlparse
+import re
+
+def clean_url(url):
+    # Remove BOM or non-ASCII characters and strip whitespace
+    url = url.encode('ascii', 'ignore').decode('utf-8').strip()
+    # Remove characters not allowed in URLs
+    url = re.sub(r'[^\w\-.:/?#=&]', '', url)
+    return url
 
 def is_domain_resolvable(url):
     try:
@@ -16,13 +24,14 @@ def is_domain_resolvable(url):
 def scrape_links(filepath, keywords):
     relevant_links = []
 
-    with open(filepath, 'r') as f:
+    with open(filepath, 'r', encoding='utf-8-sig') as f:
         urls = [line.strip() for line in f if line.strip()]
 
         for url in urls:
             url = url.strip()
             if not url:
                 continue
+            url = clean_url(url)
             if not url.startswith("http"):
                 url = "https://" + url  # Add default scheme
             if not is_domain_resolvable(url):

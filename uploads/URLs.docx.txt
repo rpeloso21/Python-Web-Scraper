@@ -1,5 +1,4 @@
-﻿
-	www.vcafranklinpark.com
+﻿	www.vcafranklinpark.com
 	www.vcafoxchapel.com
 	www.vcafortcollins.com
 	www.vcafarmingtonhills.com
@@ -47,7 +46,6 @@
 	www.valleyverdevets.com
 	www.valleyemergencypetcare.com
 	www.valleydogandcat.com
-
 	www.sterlingparkvet.com
 	www.sterlinganimalclinic.com
 	www.steptoevet.com
