@@ -1,0 +1,51 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Web Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #2b7cff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1a5ed3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Python Web Scraper</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Upload a .txt file with links:</label><br>
+        <input type="file" name="file" accept=".txt" required><br>
+
+        <label for="keywords">Enter keywords (comma-separated):</label><br>
+        <input type="text" name="keywords" placeholder="e.g. python,flask,web" required><br>
+
+        <input type="submit" value="Scrape">
+    </form>
+</body>
+</html>
