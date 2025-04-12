@@ -13,13 +13,18 @@ def index():
         keywords = request.form.get('keywords')
 
         if file and keywords:
+            os.makedirs('uploads', exist_ok=True)
             filename = secure_filename(file.filename)
-            filepath = os.path.join('uploads', filename)
+            filepath = os.path.abspath(os.path.join('uploads', filename))
             file.save(filepath)
 
             result_file = scrape_links(filepath, keywords.split(','))
 
-            return send_file(result_file, as_attachment=True)
-        
+            if os.path.exists(result_file):
+                return send_file(os.path.abspath(result_file), as_attachment=True, mimetype='text/plain')
+            else:
+                return "Result file not found", 500
+
     return render_template('index.html')
+
 
